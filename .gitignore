@@ -167,3 +167,5 @@ temp/
 # external libs zip
 *.zip
 **/simulator/
+UI/*.cfg
+*.udf

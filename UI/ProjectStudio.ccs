@@ -1,0 +1,19 @@
+<Solution>
+  <PropertyGroup Name="ProjectStudio" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="res">
+          <Folder Name="common">
+            <Image Name="close.png" />
+            <Image Name="Img_tip.png" />
+          </Folder>
+        </Folder>
+        <Folder Name="csd">
+          <Project Name="UIMsgTip.csd" Type="Layer" />
+          <Project Name="UITest.csd" Type="Scene" />
+        </Folder>
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
