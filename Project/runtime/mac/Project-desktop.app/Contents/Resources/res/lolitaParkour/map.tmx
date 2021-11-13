@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="100" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="28">
+ <tileset firstgid="1" name="lolitaMap" tilewidth="32" tileheight="32" tilecount="168" columns="7">
+  <image source="lolitaMap.png" width="240" height="786"/>
+ </tileset>
+ <layer id="1" name="main1" width="100" height="20" offsetx="-0.5" offsety="0.5">
+  <data encoding="base64" compression="zlib">
+   eJztjrtOQlEQRflTxEKlQC0UFQrBwkehUPgofBSA/8lqTrJzmzs5mWMs9kpWMlOszAwGxhhjjDHGGGOMMcb8X4Z4gCM8DOx/1Sqv+Ibv+BHYs+4o2tT0erf7g85HeIwnOA7sSstW+cQv/MafwJ51R9Gmpte73R90nuApnuF5YFdatsoGt7jD38CedUfRpqbXu90fdL7AS5ziVWBXWrZZZN3RpqbXu90fdL7GG5zhPLArLdsssu6Uprbv+6PMt7jAJd4FdqVlm0XWndLU9n1/lPkeH/ARnwK70rLNIutOaWr7vj/K/IwvuMJ1YFdatllk3SlNbd/3R5n3Zwf12w==
+  </data>
+ </layer>
+ <layer id="2" name="main2" width="100" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztzlUOAkEQRdHB3d3d3eUL9r8p7gomARJ6Qr+bnM9KPcdRSiml1D/mgx8BBBFCGBGToywuihjiSCCJFNImR1lcBlnkkEcBRZRMjrK4MiqoooY6GmiaHGVxLbTRQRc99DEwuMnmhhhhjAmmmGFucpTFLbDECmtssMXO5eaG+4f/vrn18i+33tmxxwFHnHDGBVeXmweeH2775tbLv9x6ON7YoZRSSiml1C97ATTOCg0=
+  </data>
+ </layer>
+ <objectgroup id="4" name="star">
+  <object id="4" x="656.667" y="272"/>
+  <object id="5" x="752.333" y="270.667"/>
+  <object id="6" x="1039.33" y="271.667"/>
+  <object id="7" x="1138" y="276"/>
+  <object id="9" x="1390" y="274"/>
+  <object id="10" x="1552" y="274"/>
+  <object id="11" x="1904" y="274"/>
+  <object id="14" x="2446" y="272"/>
+ </objectgroup>
+ <objectgroup id="5" name="crash">
+  <object id="16" x="384.03" y="384.667" width="95.2421" height="255.401"/>
+  <object id="17" x="866" y="388" width="94.667" height="249.333"/>
+  <object id="18" x="1216" y="387.333" width="94.667" height="247.333"/>
+  <object id="19" x="1698" y="385.333" width="95.333" height="92"/>
+  <object id="20" x="2053.33" y="386.667" width="94.667" height="247.333"/>
+  <object id="21" x="2274" y="382.667" width="95.3333" height="84.6667"/>
+  <object id="22" x="2560" y="381.333" width="89.333" height="254.667"/>
+  <object id="23" x="2782.67" y="381.333" width="92" height="100"/>
+ </objectgroup>
+</map>

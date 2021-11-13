@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>back_2.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{213,256}</string>
+                <key>spriteSourceSize</key>
+                <string>{213,256}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{213,256}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>10 11 12 0 10 12 4 9 10 7 8 9 5 6 7 4 5 7 4 7 9 2 3 4 4 0 1 4 1 2 0 4 10</string>
+                <key>vertices</key>
+                <string>187 40 213 83 213 152 167 204 120 210 145 256 61 256 81 220 2 181 0 154 0 74 50 0 147 0</string>
+                <key>verticesUV</key>
+                <string>188 41 214 84 214 153 168 205 121 211 146 257 62 257 82 221 3 182 1 155 1 75 51 1 148 1</string>
+            </dict>
+            <key>back_3.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{64,64}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{1,259},{64,64}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 4 5 1 4 0 1 2 3 1 3 4</string>
+                <key>vertices</key>
+                <string>64 41 39 64 0 64 0 23 23 0 64 0</string>
+                <key>verticesUV</key>
+                <string>65 300 40 323 1 323 1 282 24 259 65 259</string>
+            </dict>
+            <key>enemy.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{126,149}</string>
+                <key>spriteSourceSize</key>
+                <string>{126,149}</string>
+                <key>textureRect</key>
+                <string>{{67,259},{126,149}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>5 6 7 2 4 5 1 2 5 2 3 4 0 1 5 0 5 7</string>
+                <key>vertices</key>
+                <string>126 26 126 104 95 149 0 149 0 82 37 44 38 0 67 0</string>
+                <key>verticesUV</key>
+                <string>193 285 193 363 162 408 67 408 67 341 104 303 105 259 134 259</string>
+            </dict>
+            <key>road_1.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{108,126}</string>
+                <key>spriteSourceSize</key>
+                <string>{108,126}</string>
+                <key>textureRect</key>
+                <string>{{1,410},{108,126}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>4 5 6 3 4 6 0 3 6 1 2 3 0 1 3</string>
+                <key>vertices</key>
+                <string>108 126 0 126 0 119 8 102 0 26 0 0 108 0</string>
+                <key>verticesUV</key>
+                <string>109 536 1 536 1 529 9 512 1 436 1 410 109 410</string>
+            </dict>
+            <key>road_2.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{128,126}</string>
+                <key>spriteSourceSize</key>
+                <string>{128,126}</string>
+                <key>textureRect</key>
+                <string>{{111,410},{128,126}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>1 2 3 0 1 3</string>
+                <key>vertices</key>
+                <string>128 126 0 126 0 0 128 0</string>
+                <key>verticesUV</key>
+                <string>239 536 111 536 111 410 239 410</string>
+            </dict>
+            <key>road_3.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{128,128}</string>
+                <key>spriteSourceSize</key>
+                <string>{128,128}</string>
+                <key>textureRect</key>
+                <string>{{1,538},{128,128}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>1 2 3 0 1 3</string>
+                <key>vertices</key>
+                <string>128 128 0 128 0 0 128 0</string>
+                <key>verticesUV</key>
+                <string>129 666 1 666 1 538 129 538</string>
+            </dict>
+            <key>road_4.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{108,128}</string>
+                <key>spriteSourceSize</key>
+                <string>{108,128}</string>
+                <key>textureRect</key>
+                <string>{{131,538},{108,128}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>4 6 7 4 5 6 0 4 7 0 3 4 1 2 3 0 1 3</string>
+                <key>vertices</key>
+                <string>108 128 0 128 0 121 10 101 10 35 0 18 0 0 108 0</string>
+                <key>verticesUV</key>
+                <string>239 666 131 666 131 659 141 639 141 573 131 556 131 538 239 538</string>
+            </dict>
+            <key>road_5.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{128,117}</string>
+                <key>spriteSourceSize</key>
+                <string>{128,117}</string>
+                <key>textureRect</key>
+                <string>{{1,668},{128,117}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>1 2 3 0 1 3 4 9 10 4 8 9 4 5 7 5 6 7 4 7 8 12 13 14 11 12 14</string>
+                <key>vertices</key>
+                <string>21 117 18 117 18 115 21 115 128 32 128 99 112 117 45 117 0 72 0 0 126 0 18 104 12 104 12 98 18 98</string>
+                <key>verticesUV</key>
+                <string>22 785 19 785 19 783 22 783 129 700 129 767 113 785 46 785 1 740 1 668 127 668 19 772 13 772 13 766 19 766</string>
+            </dict>
+            <key>star.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{73,71}</string>
+                <key>spriteSourceSize</key>
+                <string>{73,71}</string>
+                <key>textureRect</key>
+                <string>{{131,668},{73,71}}</string>
+                <key>textureRotated</key>
+                <false/>
+                <key>triangles</key>
+                <string>0 3 4 2 0 1 2 3 0</string>
+                <key>vertices</key>
+                <string>73 71 0 71 0 27 27 0 73 0</string>
+                <key>verticesUV</key>
+                <string>204 739 131 739 131 695 158 668 204 668</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
+            <key>realTextureFileName</key>
+            <string>lolitaMap.png</string>
+            <key>size</key>
+            <string>{240,786}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:da830962c2754e56f9a061831292b739:40f6f89d95fa78c27751e45626e0f998:103ac0586c9541007e5078b8988363d7$</string>
+            <key>textureFileName</key>
+            <string>lolitaMap.png</string>
+        </dict>
+    </dict>
+</plist>
