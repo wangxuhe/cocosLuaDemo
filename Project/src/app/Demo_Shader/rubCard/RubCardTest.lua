@@ -1,4 +1,4 @@
-local RubCardFunc = require("app.Demo_Cocos.rubCard.Shader_RubCard")
+local RubCardFunc = require("app.Demo_Shader.rubCard.Shader_RubCard")
 
 local RubCardTest = class("RubCardTest", function()
     return newLayerColor(cc.size(display.width, display.height), 255)

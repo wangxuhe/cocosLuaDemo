@@ -2,14 +2,12 @@
 local ClipTest = require("app.Demo_Cocos.ClipTest")
 local DrawGraphTest = require("app.Demo_Cocos.DrawGraphTest")
 local DrawLineTest = require("app.Demo_Cocos.DrawLineTest")
-local OpenGLTest = require("app.Demo_Cocos.OpenGLTest")
 local ProcessorTest = require("app.Demo_Cocos.ProcessorTest")
 local SpineTest = require("app.Demo_Cocos.SpineTest")
 local KeyboardTest = require("app.Demo_Cocos.KeyboardTest")
 local ScheduleTest = require("app.Demo_Cocos.ScheduleTest")
 local OrbitCameraTest = require("app.Demo_Cocos.OrbitCameraTest")
 local RubberTest = require("app.Demo_Cocos.RubberTest")
-local RubCardTest = require("app.Demo_Cocos.rubCard.RubCardTest")
 local ScreenShotTest = require("app.Demo_Cocos.ScreenShotTest")
 local EffectTest = require("app.Demo_Cocos.EffectTest")
 local MotionStreakTest = require("app.Demo_Cocos.MotionStreakTest")
@@ -19,13 +17,12 @@ local tests = {
     {title = "ClipTest", layer = ClipTest, state = "裁切图形相关"},
     {title = "DrawGraphTest", layer = DrawGraphTest, state = "cocos自带的绘制图形相关"}, -- Demo代码不对
     {title = "DrawLineTest", layer = DrawLineTest, state = "cocos自带的绘制线段相关"},
-    --{title = "OpenGLTest", layer = OpenGLTest, state = "shaderDemo相关"},
+    --
     {title = "ProcessorTest", layer = ProcessorTest, state = "进度条动画相关"},
     {title = "SpineTest", layer = SpineTest, state = "骨骼动画相关"},                 -- 读取资源失败
     {title = "KeyboardTest", layer = KeyboardTest, state = "键盘事件相关"},
     {title = "ScheduleTest", layer = ScheduleTest, state = "定时器相关"},
     {title = "OrbitCameraTest", layer = OrbitCameraTest, state = "扑克翻转相关"},
-    {title = "RubCardTest", layer = RubCardTest, state = "搓牌效果相关"},
     {title = "RubberTest", layer = RubberTest, state = "橡皮擦效果"},
     {title = "ScreenShotTest", layer = ScreenShotTest, state = "截图效果"},
     {title = "EffectTest", layer = EffectTest, state = "粒子效果"},
@@ -63,7 +60,8 @@ function MainTest:ctor()
     scroll:setContentSize(cc.size(SCROLL_WIDTH, SCROLL_HEIGHT))
     scroll:setPosition(cc.p(display.width/2 - SCROLL_WIDTH/2, display.height/2 - SCROLL_HEIGHT/2))
     scroll:setDirection(cc.SCROLLVIEW_DIRECTION_VERTICAL)                               -- 设置滚动方向:垂直
-    scroll:setBounceEnabled(false)                                                      -- 设置滚动条是否显示
+    scroll:setBounceEnabled(true)                                                       -- 设置滑动惯性
+    scroll:setScrollBarEnabled(false)                                                   -- 设置滚动条是否显示
     scroll:setScrollBarWidth(10)                                                        -- 设置滚动条宽度
     scroll:setScrollBarColor(cc.RED)                                                    -- 设置滚动条颜色
     self:addChild(scroll)

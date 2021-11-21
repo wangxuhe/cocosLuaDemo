@@ -7,13 +7,16 @@ GlobalUtil = {
 
 -- @func:创建触摸屏蔽层
 -- @param: _size 大小
--- @param: _opacity 层级
-cc.exports.newLayerColor = function(_size,_opacity)
+-- @param: _param 层级或颜色
+cc.exports.newLayerColor = function(_size, _param)
 	local width = _size.width or winSize.width
 	local height = _size.height or winSize.height
-	local opactiy = _opacity or 255
 
-	local layer = cc.LayerColor:create(cc.c4b(0,0,0,opactiy),width,height)
+	local color = cc.c4b(0, 0, 0, 255) 
+	if type(_param) == "table" then 
+		color = cc.c4b(_param.r, _param.g, _param.b, _param.a)
+	end 
+	local layer = cc.LayerColor:create(color, width, height)
 
 	local function onTouchBegan(touch, event)
 		return true

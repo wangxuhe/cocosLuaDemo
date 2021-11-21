@@ -1,8 +1,6 @@
 
 local NumUtil = {}
 
-local NumUtil = {}
-
 local PHONETYPE = {
     WIN = 1,
     NOTNUM = 2,         -- 非数字
