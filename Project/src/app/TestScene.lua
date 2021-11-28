@@ -4,9 +4,11 @@ local LolitaTest = require("app.Demo_lolitaParkour.lolitaLoginScene")
 local FistFightTest = require("app.Demo_FistFight.Fist_Scene")
 local cocosTest = require("app.Demo_Cocos.MainTest")
 local shaderTest = require("app.Demo_Shader.MainTest")
+local fguiTest = require("app.Demo_FairyGUI.MainTest")
 
 local config = {
     {title = "cocosTest", layer = cocosTest, state = "Cocos示例Demo", type = "layer"},
+    {title = "FguiTest", layer = fguiTest, state = "FairyGUI", type = "layer"},
     {title = "cocosShaderTest", layer = shaderTest, state = "Cocos Shader", type = "layer"},
     {title = "TetrisTest", layer = TetrisTest, state = "俄罗斯方块", type = "layer"},
     {title = "LolitaTest", layer = LolitaTest, state = "萝莉跑酷", type = "scene"},

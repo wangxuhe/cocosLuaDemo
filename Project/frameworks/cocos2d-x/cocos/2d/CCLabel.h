@@ -369,7 +369,7 @@ public:
     /**
      * Enable underline
      */
-    void enableUnderline();
+    void enableUnderline(const Color4B& underlineColor = Color4B(0, 0, 0, 0));
 
     /**
      * Enables strikethrough.
@@ -679,7 +679,7 @@ protected:
     void createShadowSpriteForSystemFont(const FontDefinition& fontDef);
 
     virtual void updateShaderProgram();
-    void updateBMFontScale();
+    virtual void updateBMFontScale();
     void scaleFontSizeDown(float fontSize);
     bool setTTFConfigInternal(const TTFConfig& ttfConfig);
     void setBMFontSizeInternal(float fontSize);
@@ -790,6 +790,7 @@ protected:
     bool _boldEnabled;
     DrawNode* _underlineNode;
     bool _strikethroughEnabled;
+    Color4B _underlineColor4B;
 
 private:
     CC_DISALLOW_COPY_AND_ASSIGN(Label);
