@@ -70,7 +70,7 @@ IDEWorkspaceChecks.plist
 ._.*
 xcuserdata/
 DerivedData/
-Project/runtime/mac/
+Project/runtime
 
 # Ignore files built by AppCode
 .idea/
