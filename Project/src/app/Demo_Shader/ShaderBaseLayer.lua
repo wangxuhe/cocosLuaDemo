@@ -1,24 +1,24 @@
 
 local IMG_NAME = "res/Default/elephant.png"
 
-local BaseLayer = class("ShaderBaseLayer",function()
+local ShaderBaseLayer = class("ShaderBaseLayer",function()
    return newLayerColor(cc.size(display.width, display.height), {r = 255, g = 255, b = 255, a = 255})
 end)
 
-function BaseLayer:ctor() 
+function ShaderBaseLayer:ctor() 
     self:initData() 
     self:initNode()
     self:show()
 end 
 
-function BaseLayer:initData() 
+function ShaderBaseLayer:initData() 
     self._titleText = nil 
     self._normalSprite = nil 
     self._compareSprite = nil 
-
+    self._shaderNames = {}
 end 
 
-function BaseLayer:initNode() 
+function ShaderBaseLayer:initNode() 
     -- 返回按钮
     local backBtn = ccui.Button:create(Res.BTN_N, Res.BTN_P, Res.BTN_D)
     backBtn:setPosition(cc.p(display.width - 30, 30))
@@ -50,8 +50,33 @@ function BaseLayer:initNode()
     self:addChild(self._compareSprite)
 end 
 
-function BaseLayer:show()
+-- 设置标题
+function ShaderBaseLayer:setTitleName(str)
+    if tolua.isnull(self._titleText) then 
+        return 
+    end 
+    local strTitle = tostring(str) or "shader title"
+    self._titleText:setString(strTitle)
+end 
+
+--[[
+@param shaderName: shader名
+@param vertName: 顶点着色器名
+@param fragName: 片段着色器名
+]]
+function ShaderBaseLayer:getProgramState(shaderName, vertName, fragName)
+    local program = cc.GLProgramCache:getInstance():getGLProgram(shaderName)
+    if not program then 
+        program = cc.GLProgram:createWithByteArrays(vertName, fragName)
+        assert(program ~= nil, "Error: create GLProgram Failed, shaderName:" .. shaderName)
+        cc.GLProgramCache:getInstance():addGLProgram(program, shaderName)
+    end 
+    local programState = cc.GLProgramState:getOrCreateWithGLProgram(program)
+    return programState
+end 
+
+function ShaderBaseLayer:show()
     -- 
 end 
 
-return BaseLayer 
+return ShaderBaseLayer 

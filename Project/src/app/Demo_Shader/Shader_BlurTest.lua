@@ -1,78 +1,103 @@
 --
 -- 顶点shader  
 local vertex = [[  
-    attribute vec4 a_position;   
-    attribute vec2 a_texCoord;   
-    attribute vec4 a_color;   
-
-    #ifdef GL_ES    
-    varying lowp vec4 v_fragmentColor;  
-    varying mediump vec2 v_texCoord;  
-    #else                        
-    varying vec4 v_fragmentColor;   
-    varying vec2 v_texCoord;    
-    #endif     
-
-    void main()   
-    {  
-        // gl_Position表示当前位置
-        gl_Position = CC_PMatrix * a_position;   
-        v_fragmentColor = a_color;  
-        v_texCoord = a_texCoord;  
-    }  
+    attribute vec4 a_position;
+    attribute vec2 a_texCoord;
+    attribute vec4 a_color;
+    #ifdef GL_ES
+    varying lowp vec4 v_fragmentColor;
+    varying mediump vec2 v_texCoord;
+    #else
+    varying vec4 v_fragmentColor;
+    varying vec2 v_texCoord;
+    #endif
+    void main()
+    {
+        gl_Position = CC_PMatrix * a_position;
+        v_fragmentColor = a_color;
+        v_texCoord = a_texCoord;
+    }
 ]]  
 
 -- 片段shader  
 local fragment= [[  
-    #ifdef GL_ES   
-    precision mediump float; 
-    #endif 
-
-    varying vec4 v_fragmentColor;  
+    #ifdef GL_ES
+    precision mediump float;
+    #endif
+    #ifdef GL_ES
+    varying lowp vec4 v_fragmentColor;
+    varying mediump vec2 v_texCoord;
+    #else
+    varying vec4 v_fragmentColor;
     varying vec2 v_texCoord;
-
-    uniform float limit;
-    uniform vec2 my_size;
-    void main(void)   
-    {   
-        vec2 unit = 1.0/my_size.xy;
-        float r = limit;
-        float step = r/2.0;
-        float totalWeight = 0.0;
-        vec4 all = vec4(0);
-
-        for(float i = -r; i < r; i += step)
+    #endif
+    uniform vec2 resolution;        // 纹理尺寸
+    uniform float blurRadius;       // 模糊区域, 数值越大， 效果越模糊
+    uniform float sampleNum;        // 采样数
+    
+    vec4 blur(vec2 p)
+    {
+        // 检测模糊区域和采样数是否允许模糊处理，否则返回原色
+        if (blurRadius <= 0.0 || sampleNum <= 1.0)
         {
-            for(float j = -r; j < r; j += step)
-            {
-                float weight = (r - abs(i)) * (r - abs(j));
-                all += texture2D(CC_Texture0, v_texCoord + vec2(i * unit.x, j * unit.y)) * weight;
-                totalWeight += weight;
-            }
-            gl_FragColor = all /totalWeight;
+            return texture2D(CC_Texture0, p);
         }
-    }  
+        
+        // 纹理坐标的范围[0, 1], 1除以纹理尺寸九可以得出像素的单位距离
+        vec2 unit = 1.0/resolution.xy;
+        
+        // 模糊区域除以采样数，得到要遍历的步长
+        float r = blurRadius;
+        float sampleStep = r / sampleNum;
+        vec4 col = vec4(0);
+        float count = 0.0;
+        // 以当前像素点为中心，遍历指定大小内矩形范围
+        for(float x = -r; x < r; x += sampleStep)
+        {
+            for(float y = -r; y < r; y += sampleStep)
+            {
+                // 计算权重，越靠边缘权重越小
+                float weight = (r - abs(x)) * (r - abs(y));
+                // 所有的颜色值*权重并累加
+                col += texture2D(CC_Texture0, p + vec2(x * unit.x, y * unit.y)) * weight;
+                count += weight;
+            }
+        }
+        // 颜色累加除以权重，返回平均值
+        return col / count;
+    }
+    void main()
+    {
+        vec4 color = blur(v_texCoord);
+        gl_FragColor = vec4(color) * v_fragmentColor;
+    } 
 ]]
 
-local BaseLayer = require("app.Demo_Shader.BaseLayer")
-local Shader_GrayTest = class("Shader_GrayTest", BaseLayer)
+local BaseLayer = require("app.Demo_Shader.ShaderBaseLayer")
+local Shader_BlurTest = class("Shader_BlurTest", BaseLayer)
 
-function Shader_GrayTest:show() 
-    self._titleText:setString("Shader 模糊效果")
 
-    local compareSpr = self._compareSprite
-    if not compareSpr then 
+function Shader_BlurTest:show() 
+    self:setTitleName("模糊效果")
+    local node = self._compareSprite
+    if not node then 
         return 
     end 
 
-    local pixelSize = compareSpr:getTexture():getContentSizeInPixels()
+    local size = nil
+    if not node.getTexture then
+        size = node:getVirtualRenderer():getSprite():getTexture():getContentSizeInPixels()
+    else
+        size = node:getTexture():getContentSizeInPixels()
+    end
+    local blurRadius = 4.0
+    local sampleNum = 10.0
 
-    local program = cc.GLProgram:createWithByteArrays(vertex , fragment)
-    local programState = cc.GLProgramState:create(program)
-    programState:setUniformFloat("limit", 10)
-    programState:setUniformVec2("my_size", cc.p(pixelSize.width, pixelSize.height))
-    compareSpr:setGLProgram(program)
-    compareSpr:setGLProgramState(programState)
+    local programState = self:getProgramState("blurShader", vertex, fragment)
+    programState:setUniformVec2("resolution", {x = size.width, y = size.height})
+    programState:setUniformFloat("blurRadius", blurRadius);
+    programState:setUniformFloat("sampleNum", sampleNum);
+    node:setGLProgramState(programState)
 end 
 
-return Shader_GrayTest
+return Shader_BlurTest
