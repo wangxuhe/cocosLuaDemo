@@ -81,7 +81,6 @@ Project/runtime
 .Target-Release/
 
 # Ignore files built by blackberry
-Simulator/
 Device-Debug/
 Device-Release/
 
@@ -165,6 +164,5 @@ temp/
 
 # external libs zip
 *.zip
-**/simulator/
 UI/*.cfg
 *.udf
