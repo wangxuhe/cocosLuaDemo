@@ -166,3 +166,6 @@ temp/
 *.zip
 UI/*.cfg
 *.udf
+
+# FairyGUI
+FGUI/.objs

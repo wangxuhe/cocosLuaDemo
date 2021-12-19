@@ -1,0 +1,28 @@
+{
+  "font": "",
+  "fontSize": 12,
+  "textColor": "#000000",
+  "fontAdjustment": false,
+  "colorScheme": [
+    "白色 #FFFFFF",
+    "红色 #FF0000",
+    "黑色 #000000"
+  ],
+  "fontSizeScheme": [
+    "大 30",
+    "中 20",
+    "小 10"
+  ],
+  "fontScheme": [
+    "宋体  songti.ttf"
+  ],
+  "scrollBars": {
+    "horizontal": "",
+    "vertical": "",
+    "defaultDisplay": "visible"
+  },
+  "tipsRes": "",
+  "buttonClickSound": "",
+  "pivot": "default",
+  "fileName": "Common"
+}
