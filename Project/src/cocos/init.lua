@@ -107,3 +107,9 @@ require "cocos.physics3d.physics3d-constants"
 if CC_USE_FRAMEWORK then
     require "cocos.framework.init"
 end
+
+
+-- fairygui
+if nil ~= fairygui then 
+    require "cocos.fairygui.FairyGUIConstants"
+end 
