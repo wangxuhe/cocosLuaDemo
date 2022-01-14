@@ -64,19 +64,15 @@ end
 @param vertName: 顶点着色器名
 @param fragName: 片段着色器名
 ]]
-function ShaderBaseLayer:getProgramState(shaderName, vertName, fragName)
-    local program = cc.GLProgramCache:getInstance():getGLProgram(shaderName)
+function ShaderBaseLayer:getProgramState(key, vertName, fragName)
+    local program = cc.GLProgramCache:getInstance():getGLProgram(key)
     if not program then 
         program = cc.GLProgram:createWithByteArrays(vertName, fragName)
-        assert(program ~= nil, "Error: create GLProgram Failed, shaderName:" .. shaderName)
-        cc.GLProgramCache:getInstance():addGLProgram(program, shaderName)
+        assert(program ~= nil, "Error: create GLProgram Failed, key:" .. key)
+        cc.GLProgramCache:getInstance():addGLProgram(program, key)
     end 
     local programState = cc.GLProgramState:getOrCreateWithGLProgram(program)
     return programState
-end 
-
-function ShaderBaseLayer:show()
-    -- 
 end 
 
 return ShaderBaseLayer 

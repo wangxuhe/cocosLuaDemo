@@ -94,7 +94,7 @@ function Shader_BlurTest:show()
     local sampleNum = 10.0
 
     local programState = self:getProgramState("blurShader", vertex, fragment)
-    programState:setUniformVec2("resolution", {x = size.width, y = size.height})
+    programState:setUniformVec2("resolution", cc.vertex2F(size.width, size.height))
     programState:setUniformFloat("blurRadius", blurRadius);
     programState:setUniformFloat("sampleNum", sampleNum);
     node:setGLProgramState(programState)
